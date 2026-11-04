@@ -47,7 +47,8 @@ class LaravelAssistant implements Agent, Conversational, HasTools
         return [
             new GetCurrentTime(),
             new GetUserStatistics(),
-            new GetWeather()
+            new GetWeather().
+            new UpdateUserPreference(),
         ];
     }
 }

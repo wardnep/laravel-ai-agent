@@ -35,3 +35,11 @@ Route::get('/ask-ai-4', function () {
 
     return (string) $response;
 });
+
+Route::get('/ask-ai-5', function () {
+    $response = (new LaravelAssistant)->prompt(
+        'ถามนอกเรื่องนอก tools ที่เตรียมให้ไม่ได้เลยใช่มั้ย?'
+    );
+
+    return (string) $response;
+});
