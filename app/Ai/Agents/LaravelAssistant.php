@@ -11,6 +11,10 @@ use Laravel\Ai\Promptable;
 use Laravel\Ai\Providers\Tools\ProviderTool;
 use Stringable;
 
+use App\Ai\Tools\GetCurrentTime;
+use App\Ai\Tools\GetUserStatistics;
+use App\Ai\Tools\GetWeather;
+
 class LaravelAssistant implements Agent, Conversational, HasTools
 {
     use Promptable;
@@ -40,6 +44,10 @@ class LaravelAssistant implements Agent, Conversational, HasTools
      */
     public function tools(): iterable
     {
-        return [];
+        return [
+            new GetCurrentTime(),
+            new GetUserStatistics(),
+            new GetWeather()
+        ];
     }
 }
