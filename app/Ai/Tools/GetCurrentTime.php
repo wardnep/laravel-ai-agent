@@ -6,6 +6,7 @@ use Illuminate\Contracts\JsonSchema\JsonSchema;
 use Laravel\Ai\Contracts\Tool;
 use Laravel\Ai\Tools\Request;
 use Stringable;
+use Log;
 
 class GetCurrentTime implements Tool
 {
@@ -16,6 +17,8 @@ class GetCurrentTime implements Tool
 
     public function handle(Request $request): Stringable|string
     {
+        Log::info('GetCurrentTime was called');
+
         return now()->format('Y-m-d H:i:s');
     }
 

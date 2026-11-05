@@ -14,6 +14,7 @@ use Stringable;
 use App\Ai\Tools\GetCurrentTime;
 use App\Ai\Tools\GetUserStatistics;
 use App\Ai\Tools\GetWeather;
+use App\Ai\Tools\UpdateUserPreference;
 
 class LaravelAssistant implements Agent, Conversational, HasTools
 {
@@ -47,7 +48,7 @@ class LaravelAssistant implements Agent, Conversational, HasTools
         return [
             new GetCurrentTime(),
             new GetUserStatistics(),
-            new GetWeather().
+            new GetWeather(),
             new UpdateUserPreference(),
         ];
     }

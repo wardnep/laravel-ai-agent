@@ -43,3 +43,12 @@ Route::get('/ask-ai-5', function () {
 
     return (string) $response;
 });
+
+Route::get('/ask-ai-6', function () {
+    $response = (new LaravelAssistant)->prompt(
+        'วันนี้วันที่เท่าไร?
+        มีสมาชิกสมัครใหม่วันนี้กี่คน?'
+    );
+
+    return (string) $response;
+});

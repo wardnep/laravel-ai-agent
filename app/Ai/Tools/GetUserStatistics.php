@@ -7,6 +7,7 @@ use Illuminate\Contracts\JsonSchema\JsonSchema;
 use Laravel\Ai\Contracts\Tool;
 use Laravel\Ai\Tools\Request;
 use Stringable;
+use Log;
 
 class GetUserStatistics implements Tool
 {
@@ -17,6 +18,8 @@ class GetUserStatistics implements Tool
 
     public function handle(Request $request): Stringable|string
     {
+        Log::info('GetUserStatistics was called');
+
         $totalUsers = User::count();
 
         $todayUsers = User::whereDate(
