@@ -52,3 +52,11 @@ Route::get('/ask-ai-6', function () {
 
     return (string) $response;
 });
+
+Route::get('/ask-ai-7', function () {
+    $response = (new LaravelAssistant)->prompt(
+        'ขอข้อมูลสมาชิก ID 15 หน่อย'
+    );
+
+    return (string) $response;
+});

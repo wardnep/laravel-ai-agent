@@ -15,6 +15,7 @@ use App\Ai\Tools\GetCurrentTime;
 use App\Ai\Tools\GetUserStatistics;
 use App\Ai\Tools\GetWeather;
 use App\Ai\Tools\UpdateUserPreference;
+use App\Ai\Tools\GetUserById;
 
 class LaravelAssistant implements Agent, Conversational, HasTools
 {
@@ -50,6 +51,7 @@ class LaravelAssistant implements Agent, Conversational, HasTools
             new GetUserStatistics(),
             new GetWeather(),
             new UpdateUserPreference(),
+            new GetUserById(),
         ];
     }
 }
